@@ -1,0 +1,32 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme (Dark, warm red accent) -->
+    <style name="Theme.MyApplication" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Allow drawing behind system bars -->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowShowWallpaper">true</item>
+        <!-- In dark mode, we want the light status bar icons (white) -->
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Transparent system bars -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primaryVariant</item>
+        <item name="colorOnPrimary">@color/onPrimary</item>
+
+        <!-- Secondary accent -->
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnSecondary">@color/onSecondary</item>
+
+        <!-- Backgrounds and surfaces -->
+        <!-- Set window background to transparent to show the system wallpaper -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/onSurface</item>
+        <item name="colorAccent">@color/adapt</item>
+        <item name="colorSurfaceDim">@color/adap</item>
+    </style>
+
+</resources>

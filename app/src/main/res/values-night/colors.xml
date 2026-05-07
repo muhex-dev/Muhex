@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="primary">#CF6679</color>
+    <color name="primaryVariant">#B00020</color>
+    <color name="onPrimary">#000000</color>
+
+    <color name="secondary">#FF8A65</color>
+    <color name="onSecondary">#000000</color>
+    <color name="surface">#000000</color>
+    <color name="colorBackground">#000000</color>
+    <color name="onSurface">#FFFFFF</color>
+
+    <color name="adapt">#000000</color> <!-- Elevated dark gray -->
+    <color name="adap">#3B000000</color>
+
+    <color name="popup_inset">#2C2C2E</color> <!-- Inset/Section color -->
+    <color name="colorAccent">#FF5722</color>
+
+</resources>

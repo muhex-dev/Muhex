@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <!-- The actual popup background starts here -->
+    <LinearLayout
+        android:id="@+id/popup_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/bg_popup"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:paddingBottom="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp"
+            android:paddingStart="76dp"
+            android:paddingEnd="4dp">
+
+            <TextView
+                android:id="@+id/menu_header"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="App Name"
+                android:textColor="@color/onSurface"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:gravity="start|center_vertical"
+                android:ellipsize="end" />
+
+            <ImageView
+                android:id="@+id/menu_info"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:padding="6dp"
+                android:src="@drawable/ic_info"
+                android:background="?attr/selectableItemBackgroundBorderless" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:clipChildren="true">
+
+            <LinearLayout
+                android:id="@+id/menu_pages_container"
+                android:layout_width="480dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Page 1: Open, Hide, Delete, Next -->
+                <LinearLayout
+                    android:id="@+id/page_1"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:id="@+id/menu_open"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginBottom="6dp"
+                            android:src="@drawable/ic_open"
+                            android:contentDescription="@string/menu_open" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/menu_open"
+                            android:textSize="10sp"
+                            android:textColor="@color/onSurface" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/menu_hide"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <ImageView
+                            android:id="@+id/menu_hide_icon"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginBottom="6dp"
+                            android:src="@drawable/ic_hide" />
+                        <TextView
+                            android:id="@+id/menu_hide_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/menu_hide"
+                            android:textSize="10sp"
+                            android:textColor="@color/onSurface" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/menu_uninstall"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginBottom="6dp"
+                            android:src="@drawable/ic_uninstall"
+                            android:contentDescription="@string/menu_uninstall" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/menu_uninstall"
+                            android:textSize="10sp"
+                            android:textColor="@color/onSurface" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/menu_next"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginBottom="6dp"
+                            android:src="@drawable/ic_back"
+                            android:rotation="180" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="More"
+                            android:textSize="10sp"
+                            android:textColor="@color/onSurface" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Page 2: Back, Pin, Dock, Lock -->
+                <LinearLayout
+                    android:id="@+id/page_2"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:id="@+id/menu_prev"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginBottom="6dp"
+                            android:src="@drawable/ic_back" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Back"
+                            android:textSize="10sp"
+                            android:textColor="@color/onSurface" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/menu_pin"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <ImageView
+                            android:id="@+id/menu_pin_icon"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginBottom="6dp"
+                            android:src="@drawable/ic_pin" />
+                        <TextView
+                            android:id="@+id/menu_pin_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/menu_pin"
+                            android:textSize="10sp"
+                            android:textColor="@color/onSurface" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/menu_dock"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <ImageView
+                            android:id="@+id/menu_dock_icon"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginBottom="6dp"
+                            android:src="@drawable/ic_dock" />
+                        <TextView
+                            android:id="@+id/menu_dock_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/menu_dock"
+                            android:textSize="10sp"
+                            android:textColor="@color/onSurface" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/menu_lock"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <ImageView
+                            android:id="@+id/menu_lock_icon"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginBottom="6dp"
+                            android:src="@drawable/ic_lock" />
+                        <TextView
+                            android:id="@+id/menu_lock_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/menu_lock"
+                            android:textSize="10sp"
+                            android:textColor="@color/onSurface" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- App icon overlapping the top -->
+    <ImageView
+        android:id="@+id/menu_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/bg_circle_icon"
+        android:padding="12dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
